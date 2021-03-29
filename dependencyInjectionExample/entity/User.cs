@@ -13,7 +13,6 @@ namespace dependencyInjectionExample.entity
 		public string LastName { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime UpdatedAt { get; set; }
-		public int[] Books { get; set; }
 
 		public void NewUser(string email, string password, string firstName, string lastName)
 		{
