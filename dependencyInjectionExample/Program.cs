@@ -18,7 +18,15 @@ namespace dependencyInjectionExample
             var eventService = serviceProvider.GetService<IUserProvider>();
 
             User user = new User();
-            user.NewUser("loremipsum@gmail.com", "12345", "Murilo", "Fuscolin");
+
+            try
+            {
+                user.NewUser("loremipsum@gmail.com", "12345", "Murilo", "Fuscolin");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             eventService.addUser(user);
         }

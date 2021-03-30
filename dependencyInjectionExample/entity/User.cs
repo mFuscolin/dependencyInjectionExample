@@ -12,8 +12,6 @@ namespace dependencyInjectionExample.entity
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public DateTime CreatedAt { get; set; }
-		public DateTime UpdatedAt { get; set; }
-
 		public void NewUser(string email, string password, string firstName, string lastName)
 		{
 			this.ID = Guid.NewGuid();
@@ -24,7 +22,7 @@ namespace dependencyInjectionExample.entity
 
 			isEmailValid();
 
-			string pwd = generatePassword(password);
+			string pwd = GeneratePassword(password);
 
 			if (string.IsNullOrEmpty(pwd))
 			{
@@ -35,7 +33,7 @@ namespace dependencyInjectionExample.entity
 			Validade();
 
 		}
-		private string generatePassword(string password)
+		private string GeneratePassword(string password)
 		{
 			var bytes = new UTF8Encoding().GetBytes(password);
 			var hashBytes = System.Security.Cryptography.MD5.Create().ComputeHash(bytes);
